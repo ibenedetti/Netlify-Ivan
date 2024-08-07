@@ -52,7 +52,7 @@ const Hero = ({ scrollContainer }) => {
       />
       
       <div className='text-anim z-10'>
-      <TextAnimation />
+        <TextAnimation />
       </div>
 
       <ComputerCanvas className="computer-canvas absolute" scrollContainer={scrollContainer} />

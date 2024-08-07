@@ -19,7 +19,7 @@ const ComputerCanvas = ({ width = "100vw", height = "150vh" }) => {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth <= 845) { 
+      if (window.innerWidth <= 1023) { 
         setPointerEvents("none");
         setIsSmallScreen(true);
       } else {

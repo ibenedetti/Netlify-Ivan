@@ -42,7 +42,7 @@ const Experience = () => {
     ];
 
     return (
-        <div className={`sm:my-20 relative ${isAnyActive ? 'active' : ''}`}> 
+        <div className={`experience-container sm:my-20 relative ${isAnyActive ? 'active' : ''}`}> 
             <motion.div variants={textVariant()}>
                 <motion.h2
                     initial={{ opacity: 0, y: 30 }}
