@@ -320,8 +320,33 @@ button:hover {
   display: none;
 }
 
-@media (max-width: 1023px) {
-  canvas {
+@media (max-width: 1020px) {
+  #smallscreen-message {
+    display: block;
+  }
+
+  #skills, #experience, #contact{
+    display: none;
+  }
+  .parallax{
+    display: none;
+  }
+
+  h1{
+    scale:0.5;
+    left: -50px;
+  }
+
+  .w-full{
+    display: none;
+  }
+
+  .text-anim{
+    display: none;
+  }
+
+}
+  /* canvas {
     width: 100vw;
   }
 
@@ -387,9 +412,9 @@ button:hover {
   .contact-container h2 {
     scale: 0.8;
     top: -15vh; /* Adjusted for small screens */
-  }
+  
 
-  form {
+  /* form {
     width: 88vw;
     left: 5%;
   }
@@ -423,4 +448,4 @@ button:hover {
   .model-canvas {
     display: none;
   }
-}
+} */ */
