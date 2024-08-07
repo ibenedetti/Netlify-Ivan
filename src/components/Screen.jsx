@@ -4,7 +4,7 @@ import { Box3, Vector3 } from "three";
 
 const Screen = ({ scale, position, rotation }) => {
     const computerRef = useRef();
-    const { scene } = useGLTF("/models/cabinet/cabinet.glb");
+    const { scene } = useGLTF("/3d/cabinet.glb");
 
     useEffect(() => {
         const box = new Box3().setFromObject(scene);

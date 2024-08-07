@@ -338,7 +338,7 @@ form input, textarea,button:hover{
   }
 
   .parallax-container img{
-    top: 50vh;
+    top: 20vh;
   }
 
   h1{
@@ -356,8 +356,8 @@ form input, textarea,button:hover{
 
   .icon{
     opacity: 1!important;
-    margin: -8vh;
-    scale: 0.5;
+    margin: 0vh;
+    scale: 1;
   }
 
   .icon-container{    
@@ -398,7 +398,7 @@ form input, textarea,button:hover{
 
   form{
     width: 88vw;
-    left: 3vw;
+    left: 5%;
   }
   
 

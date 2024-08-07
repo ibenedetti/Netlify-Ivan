@@ -14,7 +14,7 @@ const Experience = () => {
 
     useEffect(() => {
         const handleResize = () => {
-            setIsMobile(window.innerWidth < 640);
+            setIsMobile(window.innerWidth < 845);
         };
 
         handleResize();
@@ -42,7 +42,7 @@ const Experience = () => {
     ];
 
     return (
-        <div className={`sm:my-20 relative ${isAnyActive ? 'active' : ''}`}> {/* Use isAnyActive state */}
+        <div className={`sm:my-20 relative ${isAnyActive ? 'active' : ''}`}> 
             <motion.div variants={textVariant()}>
                 <motion.h2
                     initial={{ opacity: 0, y: 30 }}
