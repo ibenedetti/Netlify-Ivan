@@ -67,17 +67,6 @@ const ContactForm = () => {
       </animated.h2>
       <form onSubmit={handleSubmit}>
         <div>
-          <label>Name</label>
-          <input
-            placeholder="Enter your name"
-            type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
           <label>Email</label>
           <input
             placeholder="Enter your email address"

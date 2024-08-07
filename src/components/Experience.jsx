@@ -9,7 +9,8 @@ import ModelCanvas from "./ModelCanvas";
 
 const Experience = () => {
     const [isMobile, setIsMobile] = useState(false);
-    const [activeExperience, setActiveExperience] = useState("Beginning");
+    const [activeExperience, setActiveExperience] = useState("");
+    const [isAnyActive, setIsAnyActive] = useState(false); // New state to track if any experience is active
 
     useEffect(() => {
         const handleResize = () => {
@@ -25,7 +26,11 @@ const Experience = () => {
     }, []);
 
     const handleTimelineElementClick = (title) => {
-        setActiveExperience((prev) => (prev === title ? "" : title));
+        setActiveExperience((prev) => {
+            const newActive = prev === title ? "" : title;
+            setIsAnyActive(newActive !== ""); // Update isAnyActive based on newActive state
+            return newActive;
+        });
     };
 
     const experiences = [
@@ -37,7 +42,7 @@ const Experience = () => {
     ];
 
     return (
-        <div className="sm:my-20 relative">
+        <div className={`sm:my-20 relative ${isAnyActive ? 'active' : ''}`}> {/* Use isAnyActive state */}
             <motion.div variants={textVariant()}>
                 <motion.h2
                     initial={{ opacity: 0, y: 30 }}
@@ -53,7 +58,7 @@ const Experience = () => {
                 {experiences.map((exp, index) => (
                     <VerticalTimelineElement
                         key={index}
-                        className="vertical-timeline-element--work"
+                        className={`vertical-timeline-element--work ${activeExperience === exp.title ? 'active-element' : ''}`}
                         contentStyle={{ background: 'transparent', color: '#bbbbbb' }}
                         contentArrowStyle={{ borderRight: '7px solid #f9f9f9' }}
                         date={exp.date}
@@ -69,7 +74,9 @@ const Experience = () => {
                 ))}
             </VerticalTimeline>
 
-            <ModelCanvas className="model-canvas absolute" activeExperience={activeExperience} />
+            {!isMobile && (
+                <ModelCanvas className="model-canvas absolute" activeExperience={activeExperience} />
+            )}
         </div>
     );
 };

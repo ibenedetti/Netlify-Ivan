@@ -1,0 +1,70 @@
+body {
+    background-color: black;
+    color: #00FF00;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+#banner {
+    padding: 10px;
+    white-space: pre;
+    font-size: 0.5em; 
+    color: #00FF00;
+    overflow: auto; 
+}
+
+#terminal {    
+    display: flex;
+    flex-direction: column-reverse;
+    flex: 1;
+    overflow: hidden;
+}
+
+#output {
+    position: relative;
+    top: 0;
+    flex: 1;
+    padding: 10px;
+    white-space: pre-wrap; 
+    font-size: 1em; 
+    color: #00FF00; 
+    overflow-y: auto;
+    margin: 0;
+    padding: 0;
+    height: 100%s;
+}
+
+#command {
+    border-top: 1px solid gray;
+    background-color: black;
+}
+
+#texter {
+    width: 100%;
+    padding: 10px;
+    background-color: black;
+    color: #00FF00;
+    border: none;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.command {
+    color: #00e4f5;
+}
+
+a {
+    color: #00FF00;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

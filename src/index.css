@@ -333,21 +333,73 @@ form input, textarea,button:hover{
 }
 
 @media (max-width: 1023px) {
-  #smallscreen-message{
-    display: block!important;
-    font-size: 2em;
-    position: absolute;
-    top: 20vh;
-    text-align: center;
+  canvas{
+    width: 100vw;
   }
 
-  canvas, img, h1 , h2 , h3, span{
-    display: none!important;
+  .parallax-container img{
+    top: 50vh;
   }
 
-  body{
-    overflow: hidden;
+  h1{
+    scale: 0.7;
+    left: -5vw;
   }
 
+  .text-anim{
+    scale:0.8;
+  }
+
+  .h2{
+    opacity: 1!important;
+  }
+
+  .icon{
+    opacity: 1!important;
+    margin: -8vh;
+    scale: 0.5;
+  }
+
+  .icon-container{    
+    flex-direction: row;
+    left: -5vw;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: stretch;
+    justify-content: center;
+    align-items: baseline;
+  }
+
+  .text-center{
+    top: -15vh;
+  }
+
+  .text-box{
+    width: 100%;
+    z-index: 1000;
+    background: var(--skill-bg)!important;
+    height: fit-content;
+    backdrop-filter: none!important;
+  }
+
+  .sm\:my-20.relative.active .vertical-timeline-element--work {
+    filter: blur(20px);
+    transition: filter 0.3s ease-in-out;
+  }
+
+  .sm\:my-20.relative.active .vertical-timeline-element--work.active-element {
+      filter: none;
+  }
+
+  .contact-container h2{
+    scale: 0.8;
+    top: -5vh;
+  }
+
+  form{
+    width: 88vw;
+    left: 3vw;
+  }
+  
 
 }
