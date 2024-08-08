@@ -1,48 +1,25 @@
+import { useState } from "react";
+import { Random, FitCalc, LED } from "./";
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
-import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeline-component";
-import "react-vertical-timeline-component/style.min.css";
-import { SectionWrapper } from "../hoc";
 import { textVariant } from "../utils/motion";
-// import { Random, FitCalc, LED,  } from "./";
-import ModelCanvas from "./ModelCanvas";
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 
 const Projects = () => {
-    const [isMobile, setIsMobile] = useState(false);
-    const [activeExperience, setActiveExperience] = useState("");
-    const [isAnyActive, setIsAnyActive] = useState(false); // New state to track if any experience is active
-
-    useEffect(() => {
-        const handleResize = () => {
-            setIsMobile(window.innerWidth < 845);
-        };
-
-        handleResize();
-        window.addEventListener("resize", handleResize);
-
-        return () => {
-            window.removeEventListener("resize", handleResize);
-        };
-    }, []);
-
-    const handleTimelineElementClick = (title) => {
-        setActiveExperience((prev) => {
-            const newActive = prev === title ? "" : title;
-            setIsAnyActive(newActive !== ""); // Update isAnyActive based on newActive state
-            return newActive;
-        });
-    };
+    const [activeExperience, setActiveExperience] = useState(undefined); // No default active component
 
     const experiences = [
-        { title: "Sound Engineering", component: <Beginning />, date: "2009 - 2019" },
-        { title: "The Spark of Programming", component: <Shuffle />, date: "2019 - 2022" },
-        { title: "First Steps", component: <Fit />, date: "2022 - 2023" },
-        { title: "The Loop", component: <CPLED />, date: "2023" },
-        { title: "Now", component: <Final />, date: "2024 - Present" },
+        { title: "Cards Shuffle Code", component: <Random /> },
+        { title: "Fit Website", component: <FitCalc /> },
+        { title: "LED Rental Model", component: <LED /> },
+        // Add more experiences as needed
     ];
 
+    const handleExperienceClick = (title) => {
+        setActiveExperience(prevTitle => (prevTitle === title ? undefined : title));
+    };
+
     return (
-        <div className={`sm:my-20 relative ${isAnyActive ? 'active' : ''}`}> 
+        <div className="projects-container sm:my-20 relative">
             <motion.div variants={textVariant()}>
                 <motion.h2
                     initial={{ opacity: 0, y: 30 }}
@@ -50,35 +27,35 @@ const Projects = () => {
                     transition={{ duration: 1 }}
                     className="text-center"
                 >
-                    My path
+                    My Projects
                 </motion.h2>
             </motion.div>
 
-            <VerticalTimeline>
-                {experiences.map((exp, index) => (
-                    <VerticalTimelineElement
-                        key={index}
-                        className={`vertical-timeline-element--work ${activeExperience === exp.title ? 'active-element' : ''}`}
-                        contentStyle={{ background: 'transparent', color: '#bbbbbb' }}
-                        contentArrowStyle={{ borderRight: '7px solid #f9f9f9' }}
-                        date={exp.date}
-                        iconStyle={{ background: '#02151C', color: '#fff' }}
-                        icon={<div className={`experience-icon ${activeExperience === exp.title ? 'active' : ''}`} />}
-                        onTimelineElementClick={() => handleTimelineElementClick(exp.title)}
-                    >
-                        <h3 className="vertical-timeline-element-title">{exp.title}</h3>
-                        <div className={`experience-content ${activeExperience === exp.title ? 'active' : ''}`}>
-                            {activeExperience === exp.title && exp.component}
-                        </div>
-                    </VerticalTimelineElement>
-                ))}
-            </VerticalTimeline>
+            <nav className="navbar mt-8">
+                <ul className="nav-list">
+                    {experiences.map((exp, index) => (
+                        <li 
+                            key={index} 
+                            className={`nav-item ${activeExperience === exp.title ? 'active' : ''}`}
+                            onClick={() => handleExperienceClick(exp.title)}
+                        >
+                            <Link 
+                                to={`/${exp.title.replace(/\s+/g, '-').toLowerCase()}`} 
+                                className="nav-link"
+                            >
+                                <div className="absolute"></div> {/* Added div here */}
+                                {exp.title}
+                            </Link>
+                        </li>
+                    ))}
+                </ul>
+            </nav>
 
-            {!isMobile && (
-                <ModelCanvas className="model-canvas absolute" activeExperience={activeExperience} />
-            )}
+            <div className="component-container mt-8">
+                {experiences.find(exp => exp.title === activeExperience)?.component}
+            </div>
         </div>
     );
 };
 
-// export default SectionWrapper(Experience, "portfolio");
+export default Projects;

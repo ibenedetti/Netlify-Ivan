@@ -1,21 +1,264 @@
-import { useGLTF } from "@react-three/drei";
-import { useRef, useEffect } from "react";
-import { Box3, Vector3 } from "three";
+import { useGLTF } from '@react-three/drei';
 
-const Screen = ({ scale, position, rotation }) => {
-    const computerRef = useRef();
-    const { scene } = useGLTF("/3d/cabinet.glb");
+const Screen = (props) => {
+  const { nodes, materials } = useGLTF('/3d/cabinet.glb')
+  return (
+    <group {...props} dispose={null}>
+      <group position={[0, 0.103, 0.009]} rotation={[1.602, 0, Math.PI / 2]}>
+        <group position={[0, 0, 0.004]} rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
+          <group position={[0, 0, 0.004]}>
+            <group position={[0, 0, 0.004]}>
+              <group position={[0, 0, 0.004]}>
+                <group position={[0, 0, 0.004]}>
+                  <group position={[0, 0, 0.004]}>
+                    <mesh geometry={nodes.Mesh1__auto__0.geometry} material={materials.auto} position={[0, 0, 0.015]} />
+                  </group>
+                </group>
+                <group position={[0, 0, 0.004]}>
+                  <group position={[0, 0, 0.004]}>
+                    <mesh geometry={nodes.Mesh10__auto_2_0.geometry} material={materials.auto_2} position={[0, 0, 0.017]} />
+                  </group>
+                </group>
+                <group position={[0, 0, 0.004]}>
+                  <group position={[0, 0, 0.004]}>
+                    <mesh geometry={nodes.Mesh11__auto_2_0.geometry} material={materials.auto_2} position={[0, 0, 0.017]} />
+                  </group>
+                </group>
+                <group position={[0, 0, 0.004]}>
+                  <group position={[0, 0, 0.004]}>
+                    <mesh geometry={nodes.Mesh12__auto__0.geometry} material={materials.auto} position={[0, 0, 0.015]} />
+                  </group>
+                </group>
+                <group position={[0, 0, 0.004]}>
+                  <group position={[0, 0, 0.004]}>
+                    <mesh geometry={nodes.Mesh13__auto_3_0.geometry} material={materials.auto_3} position={[0, 0, 0.015]} />
+                  </group>
+                </group>
+                <group position={[0, 0, 0.004]}>
+                  <group position={[0, 0, 0.004]}>
+                    <mesh geometry={nodes.Mesh14__auto_3_0.geometry} material={materials.auto_3} position={[0, 0, 0.011]} />
+                  </group>
+                </group>
+                <group position={[0, 0, 0.004]}>
+                  <group position={[0, 0, 0.004]}>
+                    <mesh geometry={nodes.Mesh15__auto_1_0.geometry} material={materials.auto_1} position={[0, 0, 0.027]} />
+                  </group>
+                </group>
+                <group position={[0, 0, 0.004]}>
+                  <group position={[0, 0, 0.004]}>
+                    <mesh geometry={nodes.Mesh2__auto__0.geometry} material={materials.auto} position={[0, 0, 0.013]} />
+                  </group>
+                </group>
+                <group position={[0, 0, 0.004]}>
+                  <group position={[0, 0, 0.004]}>
+                    <mesh geometry={nodes.Mesh27__auto_2_0.geometry} material={materials.auto_2} position={[0, 0, 0.035]} />
+                  </group>
+                </group>
+                <group position={[0, 0, 0.004]}>
+                  <group position={[0, 0, 0.004]}>
+                    <mesh geometry={nodes.Mesh28__auto_5_0.geometry} material={materials.auto_5} position={[0, 0, 0.035]} />
+                  </group>
+                </group>
+                <group position={[0, 0, 0.004]}>
+                  <group position={[0, 0, 0.004]}>
+                    <mesh geometry={nodes.Mesh29__auto_2_0.geometry} material={materials.auto_2} position={[0, 0, 0.013]} />
+                  </group>
+                </group>
+                <group position={[0, 0, 0.004]}>
+                  <group position={[0, 0, 0.004]}>
+                    <mesh geometry={nodes.Mesh30__auto_2_0.geometry} material={materials.auto_2} position={[0, 0, 0.017]} />
+                  </group>
+                </group>
+                <group position={[0, 0, 0.004]}>
+                  <group position={[0, 0, 0.004]}>
+                    <mesh geometry={nodes.Mesh31__auto_2_0.geometry} material={materials.auto_2} position={[0, 0, 0.013]} />
+                  </group>
+                </group>
+                <group position={[0, 0, 0.004]}>
+                  <group position={[0, 0, 0.004]}>
+                    <mesh geometry={nodes.Mesh3__auto_1_0.geometry} material={materials.auto_1} position={[0, 0, 0.013]} />
+                  </group>
+                </group>
+                <group position={[0, 0, 0.004]}>
+                  <group position={[0, 0, 0.004]}>
+                    <mesh geometry={nodes.Mesh32__auto_2_0.geometry} material={materials.auto_2} position={[0, 0, 0.017]} />
+                  </group>
+                </group>
+                <group position={[0, 0, 0.004]}>
+                  <group position={[0, 0, 0.004]}>
+                    <mesh geometry={nodes.Mesh33__auto_2_0.geometry} material={materials.auto_2} position={[0, 0, 0.017]} />
+                  </group>
+                </group>
+                <group position={[0, 0, 0.004]}>
+                  <group position={[0, 0, 0.004]}>
+                    <mesh geometry={nodes.Mesh4__auto_1_0.geometry} material={materials.auto_1} position={[0, 0, 0.013]} />
+                  </group>
+                </group>
+                <group position={[0, 0, 0.004]}>
+                  <group position={[0, 0, 0.004]}>
+                    <mesh geometry={nodes.Mesh5__auto__0.geometry} material={materials.auto} position={[0, 0, 0.013]} />
+                  </group>
+                </group>
+                <group position={[0, 0, 0.004]}>
+                  <group position={[0, 0, 0.004]}>
+                    <mesh geometry={nodes.Mesh6__auto_1_0.geometry} material={materials.auto_1} position={[0, 0, 0.013]} />
+                  </group>
+                </group>
+                <group position={[0, 0, 0.004]}>
+                  <group position={[0, 0, 0.004]}>
+                    <mesh geometry={nodes.Mesh7__auto_1_0.geometry} material={materials.auto_1} position={[0, 0, 0.013]} />
+                  </group>
+                </group>
+                <group position={[0, 0, 0.004]}>
+                  <group position={[0, 0, 0.004]}>
+                    <mesh geometry={nodes.Mesh8__auto_2_0.geometry} material={materials.auto_2} position={[0, 0, 0.02]} />
+                  </group>
+                </group>
+                <group position={[0, 0, 0.004]}>
+                  <group position={[0, 0, 0.004]}>
+                    <mesh geometry={nodes.Mesh9__auto_2_0.geometry} material={materials.auto_2} position={[0, 0, 0.02]} />
+                  </group>
+                </group>
+                <group position={[0, 0, 0.004]}>
+                  <group position={[0, 0, 0.004]}>
+                    <group position={[0, 0, 0.004]}>
+                      <mesh geometry={nodes.Mesh18__auto_5_0.geometry} material={materials.auto_5} position={[0, 0, 0.029]} />
+                    </group>
+                  </group>
+                  <group position={[0, 0, 0.004]}>
+                    <group position={[0, 0, 0.004]}>
+                      <mesh geometry={nodes.Mesh19__auto_5_0.geometry} material={materials.auto_5} position={[0, 0, 0.029]} />
+                    </group>
+                  </group>
+                </group>
+                <group position={[0, 0, 0.004]}>
+                  <group position={[0, 0, 0.004]}>
+                    <group position={[0, 0, 0.004]}>
+                      <mesh geometry={nodes.Mesh20__auto_5_0.geometry} material={materials.auto_5} position={[0, 0, 0.031]} />
+                    </group>
+                  </group>
+                  <group position={[0, 0, 0.004]}>
+                    <group position={[0, 0, 0.004]}>
+                      <mesh geometry={nodes.Mesh21__auto_5_0.geometry} material={materials.auto_5} position={[0, 0, 0.031]} />
+                    </group>
+                  </group>
+                </group>
+                <group position={[0, 0, 0.004]}>
+                  <group position={[0, 0, 0.004]}>
+                    <group position={[0, 0, 0.004]}>
+                      <mesh geometry={nodes.Mesh35__auto_6_0.geometry} material={materials.auto_6} position={[0, 0, 0.014]} />
+                    </group>
+                  </group>
+                  <group position={[0, 0, 0.004]}>
+                    <group position={[0, 0, 0.004]}>
+                      <mesh geometry={nodes.Mesh36__auto_1_0.geometry} material={materials.auto_1} position={[0, 0, 0.013]} />
+                    </group>
+                  </group>
+                  <group position={[0, 0, 0.004]}>
+                    <group position={[0, 0, 0.004]}>
+                      <mesh geometry={nodes.Mesh37__auto_6_0.geometry} material={materials.auto_6} position={[0, 0, 0.014]} />
+                    </group>
+                  </group>
+                  <group position={[0, 0, 0.004]}>
+                    <group position={[0, 0, 0.004]}>
+                      <mesh geometry={nodes.Mesh38__auto_1_0.geometry} material={materials.auto_1} position={[0, 0, 0.013]} />
+                    </group>
+                  </group>
+                  <group position={[0, 0, 0.004]}>
+                    <group position={[0, 0, 0.004]}>
+                      <mesh geometry={nodes.Mesh39__auto_6_0.geometry} material={materials.auto_6} position={[0, 0, 0.014]} />
+                    </group>
+                  </group>
+                  <group position={[0, 0, 0.004]}>
+                    <group position={[0, 0, 0.004]}>
+                      <mesh geometry={nodes.Mesh40__auto_1_0.geometry} material={materials.auto_1} position={[0, 0, 0.013]} />
+                    </group>
+                  </group>
+                  <group position={[0, 0, 0.004]}>
+                    <group position={[0, 0, 0.004]}>
+                      <mesh geometry={nodes.Mesh41__auto_6_0.geometry} material={materials.auto_6} position={[0, 0, 0.014]} />
+                    </group>
+                  </group>
+                  <group position={[0, 0, 0.004]}>
+                    <group position={[0, 0, 0.004]}>
+                      <mesh geometry={nodes.Mesh42__auto_1_0.geometry} material={materials.auto_1} position={[0, 0, 0.013]} />
+                    </group>
+                  </group>
+                  <group position={[0, 0, 0.004]}>
+                    <group position={[0, 0, 0.004]}>
+                      <mesh geometry={nodes.Mesh43__auto_1_0.geometry} material={materials.auto_1} position={[0, 0, 0.014]} />
+                    </group>
+                  </group>
+                  <group position={[0, 0, 0.004]}>
+                    <group position={[0, 0, 0.004]}>
+                      <mesh geometry={nodes.Mesh44__auto_1_0.geometry} material={materials.auto_1} position={[0, 0, 0.014]} />
+                    </group>
+                  </group>
+                  <group position={[0, 0, 0.004]}>
+                    <group position={[0, 0, 0.004]}>
+                      <mesh geometry={nodes.Mesh45__auto_1_0.geometry} material={materials.auto_1} position={[0, 0, 0.014]} />
+                    </group>
+                  </group>
+                  <group position={[0, 0, 0.004]}>
+                    <group position={[0, 0, 0.004]}>
+                      <mesh geometry={nodes.Mesh46__auto_1_0.geometry} material={materials.auto_1} position={[0, 0, 0.014]} />
+                    </group>
+                  </group>
+                  <group position={[0, 0, 0.004]}>
+                    <group position={[0, 0, 0.004]}>
+                      <mesh geometry={nodes.Mesh34___0.geometry} material={materials.material} position={[0, 0, 0.007]} />
+                    </group>
+                  </group>
+                </group>
+                <group position={[0, 0, 0.004]}>
+                  <group position={[0, 0, 0.004]}>
+                    <group position={[0, 0, 0.004]}>
+                      <mesh geometry={nodes.Mesh22__auto_4_0.geometry} material={materials.auto_4} position={[0, 0, 0.031]} />
+                    </group>
+                  </group>
+                  <group position={[0, 0, 0.004]}>
+                    <group position={[0, 0, 0.004]}>
+                      <mesh geometry={nodes.Mesh23__auto_4_0.geometry} material={materials.auto_4} position={[0, 0, 0.03]} />
+                    </group>
+                  </group>
+                  <group position={[0, 0, 0.004]}>
+                    <group position={[0, 0, 0.004]}>
+                      <mesh geometry={nodes.Mesh24__auto_4_0.geometry} material={materials.auto_4} position={[0, 0, 0.029]} />
+                    </group>
+                  </group>
+                  <group position={[0, 0, 0.004]}>
+                    <group position={[0, 0, 0.004]}>
+                      <mesh geometry={nodes.Mesh25__auto_4_0.geometry} material={materials.auto_4} position={[0, 0, 0.029]} />
+                    </group>
+                  </group>
+                  <group position={[0, 0, 0.004]}>
+                    <group position={[0, 0, 0.004]}>
+                      <mesh geometry={nodes.Mesh26__auto_4_0.geometry} material={materials.auto_4} position={[0, 0, 0.032]} />
+                    </group>
+                  </group>
+                </group>
+                <group position={[0, 0, 0.004]}>
+                  <group position={[0, 0, 0.004]}>
+                    <group position={[0, 0, 0.004]}>
+                      <mesh geometry={nodes.Mesh16__auto_4_0.geometry} material={materials.auto_4} position={[0, 0, 0.029]} />
+                    </group>
+                  </group>
+                  <group position={[0, 0, 0.004]}>
+                    <group position={[0, 0, 0.004]}>
+                      <mesh geometry={nodes.Mesh17__auto_4_0.geometry} material={materials.auto_4} position={[0, 0, 0.029]} />
+                    </group>
+                  </group>
+                </group>
+              </group>
+            </group>
+          </group>
+        </group>
+      </group>
+      <mesh geometry={nodes.Plane.geometry} material={materials['Material.002']} position={[0.001, -0.004, 0.103]} rotation={[-1.539, 0.001, -1.574]} scale={[0.099, 0.103, 0.098]} />
+    </group>
+  )
+}
 
-    useEffect(() => {
-        const box = new Box3().setFromObject(scene);
-        const size = new Vector3();
-        box.getSize(size);
-        console.log("Bounding Box Size:", size);
-    }, [scene]);
-
-    return (
-        <primitive ref={computerRef} object={scene} position={position} scale={scale} rotation={rotation} />
-    );
-};
+useGLTF.preload('/3d/cabinet.glb')
 
 export default Screen;

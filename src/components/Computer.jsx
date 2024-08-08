@@ -1,6 +1,4 @@
-import React from 'react'
-import { useGLTF } from '@react-three/drei'
-
+import { useGLTF } from '@react-three/drei';
 
 const Computer = (props) => {
   const { nodes, materials } = useGLTF('/3d/Computer.glb')

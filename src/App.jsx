@@ -2,8 +2,9 @@ import { useEffect, useRef } from 'react';
 import { BrowserRouter } from "react-router-dom";
 import { Hero } from "./components";
 import { Skills } from "./components";
-import { Experience } from "./components"
-import { ContactForm } from "./components"
+import { Experience } from "./components";
+import { ContactForm } from "./components";
+import { Projects } from "./components";
 
 
 function App() {
@@ -24,6 +25,10 @@ function App() {
 
           <div id="experience" className='relative z-30 bg-primary'>
             <Experience />
+          </div>
+
+          <div id="Projects" className='relative z-30 bg-primary'>
+            <Projects />
           </div>
 
           <div id="contact" className='relative z-30 bg-primary'>
