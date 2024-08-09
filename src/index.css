@@ -11,8 +11,8 @@
   line-height: 1.5;
   font-weight: 400;
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: rgba(255, 255, 255);
+  background-color: #242424!important;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -249,7 +249,7 @@ canvas {
   top: 50%;
   width: 30px;
   height: 30px;
-  background-color: #f0f0f0; /* Adjust color as needed */
+  background-color: #f0f0f0; 
 }
 
 .carousel-container::before {
@@ -326,6 +326,7 @@ button:hover {
 
 .navbar {
   z-index: 10000;
+  left: 2vw;
   position: relative;
   background-color: transparent;
   display: flex;
@@ -417,8 +418,9 @@ button:hover {
 
 .screen-scene-wrapper{
   position: relative;
-  left: -50vw;
-  top: -10vh;
+  left: -40vw;
+  top: 0vh;
+  scale: 0.7;
 }
 
 /* SHUFFLE */
